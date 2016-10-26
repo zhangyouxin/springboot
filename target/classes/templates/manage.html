@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<script type="text/javascript">
+function info()
+{
+	var URL = "http://127.0.0.1:8080/addUser";
+	document.myForm.action = URL;
+	document.myForm.method = "post";
+	document.myForm.submit();
+}
+function del()
+{
+	var URL = "http://127.0.0.1:8080/removeUser";
+	document.delForm.action = URL;
+	document.delForm.method = "post";
+	document.delForm.submit();
+}
+</script>
+<body>
+    <p text="Manage Web!" /><br />
+	<form name="myForm">
+	端口：<input type="text" name="port"></input>
+	密码：<input type="text" name="passwd"></input>
+	<input type="button" onclick="info()" value="添加端口"></input>
+	</form>
+	
+	<form name="delForm">
+	端口：<input type="text" name="port"></input>
+	<input type="button" onclick="del()" value="移除端口"></input>
+	</form>
+	<br />
+</body>
+</html>
